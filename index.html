@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light"/>
+<link rel="icon" href="data:,"/>
+<title>Beth Carter, Compass Austin | Lake Austin Buyer Guide Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#102a3d; --navy2:#163a52; --ink:#1c2b36; --muted:#5a6b76;
+  --bg:#fbfaf7; --card:#fff; --line:#e6e0d4; --sand:#f3eee3;
+  --brass:#b48a3f; --brass2:#966f2e; --teal:#1f6b5a;
+  --radius:18px; --shadow:0 18px 40px rgba(16,42,61,.12);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:"Public Sans",system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.08;margin:0;color:var(--navy)}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:700}
+h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+h3{font-size:1.3rem}
+p{margin:0} a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+.demo-bar{background:#0b1d2b;color:#e8eef2;text-align:center;padding:9px 16px;font-size:.86rem}
+.demo-bar strong{color:#f0c979} .demo-bar a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.monogram{width:46px;height:46px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:1.25rem;border-radius:6px;flex:none}
+.brand b{font-family:"Playfair Display",serif;font-size:1.35rem;color:var(--navy);display:block;line-height:1}
+.brand span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass2);font-weight:700}
+.links{display:flex;gap:22px;align-items:center}
+.links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font-weight:700;border-radius:999px;padding:13px 22px;font-size:.96rem;transition:transform .18s ease, box-shadow .18s ease, background .18s ease}
+.btn-gold{background:var(--brass);color:#fff} .btn-gold:hover{background:var(--brass2)}
+.btn-navy{background:var(--navy);color:#fff} .btn-outline{background:#fff;border:1.5px solid var(--navy);color:var(--navy)}
+@media(hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(16,42,61,.18)} .card-hover:hover{transform:translateY(-4px);box-shadow:var(--shadow)}}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:1.1rem;cursor:pointer}
+.mobile-menu{display:none;border-top:1px solid var(--line);padding:12px 0 16px}
+.mobile-menu.open{display:block} .mobile-menu a{display:block;padding:10px 0;text-decoration:none;font-weight:600}
+@media(max-width:820px){.links{display:none}.burger{display:block}}
+.hero{position:relative;color:#fff}
+.hero-media{position:absolute;inset:0} .hero-media img{width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,26,40,.82) 0%,rgba(9,26,40,.55) 52%,rgba(9,26,40,.12) 100%)}
+.hero-inner{position:relative;z-index:1;padding:84px 0 72px;max-width:680px}
+.hero h1{color:#fff} .hero h1 em{color:#f0c979;font-style:normal}
+.hero p.lead{font-size:1.14rem;color:#e6edf1;margin:18px 0 26px;max-width:560px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{margin-top:18px;font-size:.9rem;color:#cfe0ea}
+.pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+section{padding:64px 0} .section-head{max-width:720px;margin-bottom:28px}
+.section-head p{color:var(--muted);margin-top:10px;font-size:1.05rem}
+.label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass2);font-weight:800;margin-bottom:10px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.panel.old{background:#f6f2e9} .panel.new{border:2px solid var(--teal)}
+.tag{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-bottom:14px}
+.tag-old{background:#e7ddc8;color:#6b5a2e} .tag-new{background:#dff2ea;color:#14532d}
+.panel ul{margin:14px 0 0;padding:0;list-style:none}
+.panel li{padding:9px 0 9px 28px;position:relative;border-top:1px solid var(--line)} .panel li:first-child{border-top:0}
+.panel li::before{position:absolute;left:0;top:9px;font-weight:800}
+.old li::before{content:"×";color:#b45309} .new li::before{content:"✓";color:var(--teal)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.grid3{grid-template-columns:1fr}}
+.guide-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .2s ease, box-shadow .2s ease}
+.guide-card img{width:100%;height:210px;object-fit:cover}
+.guide-card div{padding:20px} .guide-card p{color:var(--muted);margin-top:8px;font-size:.96rem}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.chip{border:1.5px solid #cfd8dd;background:#fff;padding:8px 14px;border-radius:999px;font-weight:600;font-size:.9rem;cursor:pointer}
+.chip.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chip-gold.sel{background:var(--brass);border-color:var(--brass)}
+.booking{background:var(--navy);color:#fff;border-radius:24px;padding:34px}
+.booking h2{color:#fff} .booking .section-head p{color:#c9d8e1}
+.tabs{display:flex;gap:8px;background:rgba(255,255,255,.1);padding:6px;border-radius:999px;width:fit-content;max-width:100%;flex-wrap:wrap;margin-bottom:22px}
+.tab{border:0;background:transparent;color:#dbe7ee;padding:11px 20px;border-radius:999px;font-weight:700;cursor:pointer;font-size:.95rem}
+.tab.active{background:#fff;color:var(--navy)}
+.form-card{background:#fff;color:var(--ink);border-radius:18px;padding:26px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:680px){.form-grid{grid-template-columns:1fr} .booking{padding:22px 16px}}
+.field label{display:block;font-weight:700;font-size:.88rem;margin-bottom:6px;color:var(--navy)}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid #cfd8dd;border-radius:12px;padding:12px 13px;font:inherit;background:#fff;color:var(--ink)}
+.field textarea{min-height:96px;resize:vertical}
+.field.full{grid-column:1/-1}
+.help{font-size:.82rem;color:var(--muted);margin-top:5px}
+.submit{width:100%;margin-top:18px;font-size:1.02rem;padding:15px}
+.fine{font-size:.83rem;color:var(--muted);text-align:center;margin-top:12px}
+.success{display:none;background:#ecfdf5;border:1.5px solid #6ee7b7;border-radius:16px;padding:24px;margin-top:18px}
+.success.show{display:block} .success h3{color:#14532d;font-family:"Public Sans",sans-serif}
+.success p{margin-top:8px} .ref{font-weight:800;color:var(--navy)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--sand);color:var(--brass2);display:grid;place-items:center;font-weight:800;margin-bottom:12px}
+.step p{color:var(--muted);margin-top:7px}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.split img{border-radius:20px;width:100%;height:380px;object-fit:cover}
+.faq{max-width:820px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer;color:var(--navy)} details p{color:var(--muted);margin-top:8px}
+footer{background:#0b1d2b;color:#c9d8e1;padding:44px 0 90px}
+footer h3{color:#fff} footer a{color:#f0c979}
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 14px;display:none;gap:10px}
+.sticky-bar .btn{flex:1;padding:12px}
+@media(max-width:760px){.sticky-bar{display:flex} body{padding-bottom:64px}}
+.reveal.in{animation:revealIn .6s ease backwards}
+@keyframes revealIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-anim{animation:rise .65s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal.in{animation:none}.hero-anim{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo concept by <strong>KezTech Solution</strong>, not the official site of Beth Carter or Compass. <a href="https://keztech-portfolio.vercel.app" target="_blank" rel="noopener">See our work</a></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="monogram">BC</span><span><b>Beth Carter</b><span>Compass &middot; Austin, Texas</span></span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#guide">Lake Austin Guide</a><a href="#areas">Areas</a><a href="#process">How It Works</a><a href="#faq">FAQ</a>
+      <a class="btn btn-gold" href="#enquire" style="padding:11px 18px">Enquire About Lake Austin</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu">
+    <a href="#guide">Lake Austin Guide</a><a href="#areas">Areas</a><a href="#process">How It Works</a><a href="#faq">FAQ</a><a href="#enquire">Enquire About Lake Austin</a><a href="#enquire" data-goto-tour>Book a Tour</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-media"><img src="assets/lakeway.webp" alt="Waterfront home on Lake Austin with a private boat dock at sunset"></div>
+    <div class="wrap"><div class="hero-inner hero-anim">
+      <span class="pill">Lake Austin Buyer Guide</span>
+      <h1>Love Lake Austin? <em>Start with a real conversation.</em></h1>
+      <p class="lead">A guide should do more than describe the water. This page lets Lake Austin buyers enquire in under a minute and book a tour, right where they are reading.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#enquire">Send a Lake Austin Enquiry</a>
+        <a class="btn btn-outline" href="#enquire" data-goto-tour style="background:rgba(255,255,255,.95)">Book a Tour</a>
+      </div>
+      <p class="hero-note">No account needed. Tell Beth what you are looking for, and how you would like to be contacted.</p>
+    </div></div>
+  </section>
+
+  <section id="fix">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="label">The fix in this demo</p><h2>The guide ends. The enquiry should not.</h2><p>On the current Lake Austin guide page, a ready buyer reaches the end and finds only a phone number and an email address. If they are on their phone, in a hurry, or not ready to call, that interest is easily lost.</p></div>
+      <div class="compare">
+        <div class="panel old"><span class="tag tag-old">Current guide page</span><h3>Read, then work it out yourself</h3>
+          <ul><li>No enquiry form for Lake Austin buyers</li><li>Only phone and email at the end of the page</li><li>No way to share budget, area, or timeline</li><li>No tour booking step at all</li><li>Buyer has to leave the page to make contact</li></ul></div>
+        <div class="panel new"><span class="tag tag-new">This demo</span><h3>Read, enquire, book a tour</h3>
+          <ul><li>Clear Lake Austin buyer enquiry form on the page</li><li>Budget in USD, preferred area, and timeline captured up front</li><li>Separate tour booking step with date and time</li><li>Instant on-screen confirmation with a reference</li><li>Preferred contact method, call, text, or email</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" style="background:var(--sand);padding-top:56px;padding-bottom:56px">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="label">Inside the guide</p><h2>What Lake Austin buyers come to learn</h2><p>Short, scannable sections that answer the questions buyers actually ask before they enquire.</p></div>
+      <div class="grid3">
+        <article class="guide-card card-hover"><img src="assets/hero.webp" alt="Austin skyline seen across the water at sunset"><div><h3>Waterfront living</h3><p>How shoreline, views, and outdoor space shape daily life on Lake Austin, and what to look for on a first visit.</p></div></article>
+        <article class="guide-card card-hover"><img src="assets/lakeway.webp" alt="Private dock and boat on Lake Austin"><div><h3>Boating and docks</h3><p>Private docks, boat access, and time on the water, the details that make Lake Austin different from other Austin areas.</p></div></article>
+        <article class="guide-card card-hover"><img src="assets/austin.jpg" alt="Boardwalk and skyline across the lake in Austin, Texas"><div><h3>Close to the city</h3><p>Lake life with Austin close by: dining, trails, and downtown within reach, without giving up the water.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="wrap reveal">
+      <div class="split">
+        <div><p class="label">Areas buyers ask about</p><h2>One lake, several ways to live on it</h2><p style="color:var(--muted);margin-top:10px">Buyers use the enquiry form below to name the stretch of Lake Austin and the nearby Austin areas they want to focus on, so the first conversation starts in the right place.</p>
+          <div class="chips" aria-label="Areas"><span class="chip">Lake Austin Waterfront</span><span class="chip">Westlake Hills</span><span class="chip">Lakeway</span><span class="chip">Tarrytown</span><span class="chip">Rollingwood</span><span class="chip">Downtown Austin</span><span class="chip">Other Austin Areas</span></div>
+          <p style="margin-top:18px"><a class="btn btn-navy" href="#enquire">Tell Beth Your Area</a></p></div>
+        <img src="assets/home.jpeg" alt="Luxury Austin home at dusk with stone facade and landscaped front garden">
+      </div>
+    </div>
+  </section>
+
+  <section id="enquire" style="padding-top:20px">
+    <div class="wrap reveal">
+      <div class="booking">
+        <div class="section-head"><p class="label" style="color:#f0c979">Enquire or book a tour</p><h2>Lake Austin buyers: start here</h2><p>Two clear steps, pick one. Send an enquiry with your budget and timeline, or book a tour with a preferred date and time. You will see a confirmation on this page right away.</p></div>
+        <div class="tabs" role="tablist" aria-label="Enquiry or tour">
+          <button class="tab active" id="tab-enquiry" role="tab" aria-selected="true">1 &middot; Buyer Enquiry</button>
+          <button class="tab" id="tab-tour" role="tab" aria-selected="false">2 &middot; Book a Tour</button>
+        </div>
+
+        <div class="form-card" id="panel-enquiry" role="tabpanel">
+          <form id="enquiryForm" novalidate>
+            <div class="form-grid">
+              <div class="field"><label for="eName">Full name *</label><input id="eName" required autocomplete="name" placeholder="Jordan Smith"></div>
+              <div class="field"><label for="ePhone">Phone *</label><input id="ePhone" required type="tel" autocomplete="tel" placeholder="(512) 555-0142"></div>
+              <div class="field"><label for="eEmail">Email</label><input id="eEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+              <div class="field"><label for="eInterest">I am interested in</label><select id="eInterest"><option>Buying on Lake Austin</option><option>Buying elsewhere in Austin</option><option>Selling a home</option><option>Just starting research</option></select></div>
+              <div class="field"><label for="eBudget">Budget (USD)</label><select id="eBudget"><option>Under $750,000</option><option>$750,000 to $1,250,000</option><option selected>$1,250,000 to $2,500,000</option><option>$2,500,000 to $5,000,000</option><option>Over $5,000,000</option><option>Prefer to discuss</option></select></div>
+              <div class="field"><label for="eArea">Preferred area</label><select id="eArea"><option>Lake Austin Waterfront</option><option>Westlake Hills</option><option>Lakeway</option><option>Tarrytown</option><option>Rollingwood</option><option>Downtown Austin</option><option>Not sure yet</option></select></div>
+              <div class="field"><label for="eTimeline">Timeline</label><select id="eTimeline"><option>Ready now</option><option>Within 3 months</option><option>3 to 6 months</option><option>6 months or more</option><option>Just researching</option></select></div>
+              <div class="field"><label>Preferred contact</label><div class="chips" id="contactChips" style="margin-top:2px"><button type="button" class="chip chip-gold sel">Call</button><button type="button" class="chip chip-gold">Text</button><button type="button" class="chip chip-gold">Email</button></div></div>
+              <div class="field full"><label for="eMsg">What are you looking for?</label><textarea id="eMsg" placeholder="Waterfront, a dock if possible, room for family weekends, and a quieter stretch of the lake..."></textarea><p class="help">Demo form: your enquiry is confirmed on screen only, nothing is sent or stored.</p></div>
+            </div>
+            <button class="btn btn-gold submit" type="submit">Send My Lake Austin Enquiry</button>
+          </form>
+          <div class="success" id="enquirySuccess" tabindex="-1"><h3>Enquiry received</h3><p id="enquirySummary"></p><p>Reference: <span class="ref" id="enquiryRef"></span></p><p style="margin-top:12px"><button class="btn btn-navy" id="copyEnquiry" type="button">Copy Enquiry Details</button></p></div>
+        </div>
+
+        <div class="form-card" id="panel-tour" role="tabpanel" hidden>
+          <form id="tourForm" novalidate>
+            <div class="form-grid">
+              <div class="field"><label>Tour type</label><div class="chips" id="tourTypeChips" style="margin-top:2px"><button type="button" class="chip sel">In person</button><button type="button" class="chip">Video call</button><button type="button" class="chip">Waterfront and area drive</button></div></div>
+              <div class="field"><label for="tArea">Area focus</label><select id="tArea"><option>Lake Austin Waterfront</option><option>Westlake Hills</option><option>Lakeway</option><option>Tarrytown</option><option>Mix of areas</option></select></div>
+              <div class="field"><label for="tDate">Preferred date *</label><input id="tDate" type="date" required></div>
+              <div class="field"><label>Preferred time</label><div class="chips" id="timeChips" style="margin-top:2px"><button type="button" class="chip">10:00 AM</button><button type="button" class="chip sel">12:00 PM</button><button type="button" class="chip">2:00 PM</button><button type="button" class="chip">4:00 PM</button></div></div>
+              <div class="field"><label for="tName">Full name *</label><input id="tName" required autocomplete="name" placeholder="Jordan Smith"></div>
+              <div class="field"><label for="tPhone">Phone *</label><input id="tPhone" required type="tel" autocomplete="tel" placeholder="(512) 555-0142"></div>
+              <div class="field full"><label for="tNotes">Anything Beth should know?</label><textarea id="tNotes" placeholder="First visit to Lake Austin, mainly want to understand the different stretches of the lake..."></textarea><p class="help">Demo form: your tour request is confirmed on screen only, nothing is sent or stored. Exact availability is confirmed by the agent on a live site.</p></div>
+            </div>
+            <button class="btn btn-navy submit" type="submit">Request This Tour</button>
+          </form>
+          <div class="success" id="tourSuccess" tabindex="-1"><h3>Tour requested</h3><p id="tourSummary"></p><p>Reference: <span class="ref" id="tourRef"></span></p><p style="margin-top:12px"><button class="btn btn-navy" id="copyTour" type="button">Copy Tour Details</button></p></div>
+        </div>
+        <p class="fine" style="color:#9fb6c4">Prefer to talk first? On the live site, this section sits next to Beth Carter's phone and email, it does not replace them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="padding-top:10px">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="label">How it works</p><h2>From guide reader to booked tour, in three steps</h2></div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><h3>Read the guide</h3><p>Explore waterfront living, docks, and the areas around Lake Austin at your own pace.</p></div>
+        <div class="step"><div class="step-num">2</div><h3>Send an enquiry</h3><p>Share your budget in USD, preferred area, and timeline, so the reply is useful from the first message.</p></div>
+        <div class="step"><div class="step-num">3</div><h3>Book a tour</h3><p>Pick a date and time that suits you, in person or by video, and get an on-screen confirmation with a reference.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="background:var(--sand)">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="label">Questions</p><h2>Before you enquire</h2></div>
+      <div class="faq">
+        <details><summary>Do I need to call to enquire about Lake Austin?</summary><p>Not on this demo page. The enquiry form captures your budget, area, and timeline on the page, and the tour step lets you request a date and time. Phone and email remain available for anyone who prefers them.</p></details>
+        <details><summary>What happens after I send an enquiry?</summary><p>You see an instant confirmation with a reference on screen. On a live site, that enquiry would go straight to Beth Carter at Compass in Austin, who would reply by your preferred contact method.</p></details>
+        <details><summary>Can I book a tour without choosing a specific home?</summary><p>Yes. The tour step is built for area and waterfront tours, so buyers who are still learning Lake Austin can book before they have a shortlist.</p></details>
+        <details><summary>Is this Beth Carter's official website?</summary><p>No. This is a demo concept built by KezTech Solution to show how the Lake Austin guide page could capture buyer enquiries. It is not the official site of Beth Carter or Compass, and it carries no live listings.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Beth Carter &middot; Compass &middot; Austin, Texas</h3>
+    <p style="margin-top:10px;max-width:640px">Demo concept by KezTech Solution. This page is a design demonstration for the Lake Austin buyer guide, with an enquiry form and tour booking step added. It is not the official site of Beth Carter or Compass, and it contains no live listings, prices, or reviews.</p>
+    <p style="margin-top:14px"><a href="https://keztech-portfolio.vercel.app" target="_blank" rel="noopener">KezTech Solution portfolio</a> &middot; <a href="#enquire">Enquire about Lake Austin</a> &middot; <a href="#enquire" data-goto-tour>Book a tour</a></p>
+    <p style="margin-top:18px;font-size:.86rem;color:#7f97a6">KezTech Solution &copy; 2026 &middot; Demo only, form submissions are confirmed on screen and are not sent or stored.</p>
+  </div>
+</footer>
+
+<div class="sticky-bar"><a class="btn btn-gold" href="#enquire">Enquire</a><a class="btn btn-navy" href="#enquire" data-goto-tour>Book a Tour</a></div>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',function(){var open=menu.classList.toggle('open');burger.setAttribute('aria-expanded',open);});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+
+  function chipGroup(id){var box=document.getElementById(id);if(!box)return null;var chips=box.querySelectorAll('.chip');chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.classList.remove('sel');});c.classList.add('sel');});});return function(){var s=box.querySelector('.chip.sel');return s?s.textContent.trim():'';};}
+  var getContact=chipGroup('contactChips'), getTourType=chipGroup('tourTypeChips'), getTime=chipGroup('timeChips');
+
+  var tabE=document.getElementById('tab-enquiry'), tabT=document.getElementById('tab-tour');
+  var panelE=document.getElementById('panel-enquiry'), panelT=document.getElementById('panel-tour');
+  function showTour(tour){tabE.classList.toggle('active',!tour);tabT.classList.toggle('active',tour);tabE.setAttribute('aria-selected',!tour);tabT.setAttribute('aria-selected',tour);panelE.hidden=tour;panelT.hidden=!tour;}
+  tabE.addEventListener('click',function(){showTour(false);}); tabT.addEventListener('click',function(){showTour(true);});
+  document.querySelectorAll('[data-goto-tour]').forEach(function(el){el.addEventListener('click',function(){showTour(true);});});
+
+  var dateInput=document.getElementById('tDate');
+  var now=new Date(); now.setDate(now.getDate()+1);
+  dateInput.min=now.toISOString().slice(0,10); dateInput.value=dateInput.min;
+
+  function ref(prefix,name){var init=(name||'BC').trim().split(/\s+/).map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase()||'BC';var rand=Math.random().toString(36).slice(2,6).toUpperCase();return prefix+'-'+init+rand;}
+  function copyText(text,btn){var done=function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o;},1600);};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done).catch(done);}else{var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}}
+  function fmtDate(v){if(!v)return'';var d=new Date(v+'T12:00:00');return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+
+  var lastEnquiry='', lastTour='';
+  document.getElementById('enquiryForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var name=document.getElementById('eName').value.trim(), phone=document.getElementById('ePhone').value.trim();
+    if(!name){document.getElementById('eName').focus();return;} if(!phone){document.getElementById('ePhone').focus();return;}
+    var interest=document.getElementById('eInterest').value, budget=document.getElementById('eBudget').value, area=document.getElementById('eArea').value, timeline=document.getElementById('eTimeline').value, contact=getContact?getContact():'Call';
+    var r=ref('BC',name); document.getElementById('enquiryRef').textContent=r;
+    lastEnquiry='Lake Austin enquiry for Beth Carter, Compass Austin\nName: '+name+'\nPhone: '+phone+'\nInterest: '+interest+'\nBudget: '+budget+'\nArea: '+area+'\nTimeline: '+timeline+'\nPreferred contact: '+contact+'\nReference: '+r;
+    document.getElementById('enquirySummary').textContent='Thank you, '+name.split(' ')[0]+'. Interest: '+interest+'. Budget: '+budget+'. Area: '+area+'. Timeline: '+timeline+'. Preferred contact: '+contact+' at '+phone+'.';
+    var s=document.getElementById('enquirySuccess'); s.classList.add('show'); s.focus(); s.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('tourForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var name=document.getElementById('tName').value.trim(), phone=document.getElementById('tPhone').value.trim();
+    if(!name){document.getElementById('tName').focus();return;} if(!phone){document.getElementById('tPhone').focus();return;}
+    var type=getTourType?getTourType():'In person', time=getTime?getTime():'12:00 PM', area=document.getElementById('tArea').value, date=fmtDate(dateInput.value);
+    var r=ref('BC',name); document.getElementById('tourRef').textContent=r;
+    lastTour='Tour request for Beth Carter, Compass Austin\nName: '+name+'\nPhone: '+phone+'\nTour type: '+type+'\nArea: '+area+'\nDate: '+date+'\nTime: '+time+'\nReference: '+r;
+    document.getElementById('tourSummary').textContent='Thank you, '+name.split(' ')[0]+'. Tour type: '+type+'. Area: '+area+'. Date: '+date+' at '+time+'. We will confirm exact availability by phone at '+phone+'.';
+    var s=document.getElementById('tourSuccess'); s.classList.add('show'); s.focus(); s.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('copyEnquiry').addEventListener('click',function(){copyText(lastEnquiry,this);});
+  document.getElementById('copyTour').addEventListener('click',function(){copyText(lastTour,this);});
+
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
